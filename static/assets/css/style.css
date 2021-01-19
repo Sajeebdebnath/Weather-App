@@ -1,0 +1,94 @@
+.header-top {
+    padding: 32px 0px;
+    background: #03a9e8;
+    color: white;
+}
+
+.header-body h2 {
+    font-size: 25px;
+    font-style: oblique;
+}
+
+.form-design input:nth-child(2) {
+    position: absolute;
+    width: 20%;
+    border: none;
+    background: deepskyblue;
+    color: white;
+    padding: 5px 0px;
+    margin: 0;
+    border-radius: 0px 4px 4px 0px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.form-design input:nth-child(1) {
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-style: italic;
+    border-radius: 4px 0px 0px 4px;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+}
+
+.form-design input:focus {outline-color: skyblue;outline: 1px;}
+
+.body-part {
+    padding: 40px;
+}
+
+.weather-show {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 30px;
+    position: relative;
+}
+.weather-icon {
+    float: left;
+}
+
+.weather-text {
+    display: inline-block;
+}
+
+.weather-text h3 {
+    font-size: 22px;
+}
+
+.weather-text h6 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #84878a;
+}
+p.footer-text {
+    text-align: center;
+    font-weight: bold;
+}
+.weather-text p {
+    margin: 0;
+}
+.form-design {
+    margin-bottom: 60px;
+}
+.delete_city {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.delete_city a {
+    color: black;
+    background: transparent;
+    padding: 0px 6px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.delete_city a:hover {
+    background: #909086;
+    color: white;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/default.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="header-body">
+                  <h2>What's the weather like ?</h2>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-part">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 offset-lg-4">
+            <div class="form-design">
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-secondary">{{ message }}</div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+
+              <form action="/submit_form" method="post">
+                <input type="text" name="city" placeholder="City Name">
+                <input type="submit" value="Add" class="city-btn">
+              </form>
+            </div>
+          </div>
+
+            <div class="col-lg-8 offset-lg-2">
+                <div class="row">
+                    {% for weather in weather_data %}
+                    <div class="col-lg-6">
+                        <div class="weather-show">
+                            <div class="delete_city">
+                                <a href="/delete/{{ weather.city }}"><i class="fa fa-times"></i></a>
+                            </div>
+                          <div class="weather-icon">
+                            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="">
+                          </div>
+                          <div class="weather-text">
+                            <h3>{{ weather.city }}</h3>
+                            <h6>{{ weather.tempature }}&deg; C</h6>
+                            <p>{{ weather.description }}</p>
+                          </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+      </div>
+    </div> 
+    <div class="footer-part pt-40 pb-40 bg-light">
+      <p class="footer-text">Copyrighted By &copy;Sajeeb Debnath</p>
+    </div>
+</body>
+
+
+<!-- JS Script -->
+<script src="{{ url_for('static', filename='assets/js/jqery 3.2.1.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/bootstrap 4.js') }}"></script>
+</html>
